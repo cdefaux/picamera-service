@@ -1,0 +1,14 @@
+[Unit]
+Description=Picam
+After=network.target
+
+[Service]
+Environment="LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libatomic.so.1"
+Environment="SCRIPT_ARGS=%I"
+ExecStart=/usr/bin/python3 -u %h/picamera-service/picamera-streamer.py %I
+WorkingDirectory=%h/picamera-service
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
