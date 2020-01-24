@@ -24,7 +24,7 @@ There a few dependencies not directly covered by the installation instructions b
 1. One or more Raspberry Pi with Camera Module installed.
 2. The picamera units are already set up, with network configuration and python3 are already installed.
 3. Importantly, you must be able to `ssh` into each Raspberry Pi without a password. Look [here][sshpi] if you are new to that. You will never go back. :-) 
-4. python dependencies are installed on all systems. 
+4. python dependencies are installed on all systems. If you use [nix](https://nixos.org), enter `nix-shell` to get a python with dependencies. Otherwise, ensure you have python 3.6 or above, plus the following packages: imutils, numpy, opencv4.
 
 ## Installation
 
@@ -32,7 +32,7 @@ Install imagezmq. Currently this in not on pypi, nor is the origianalrepo pip-in
 
 ````
 $ cd picamera-service
-$ git clone https:/github.com/timsears/picamera-service.git
+$ git clone -b pip-installable git@github.com:timsears/imagezmq.git  
 $ pip install imagezmq
 ````
 
